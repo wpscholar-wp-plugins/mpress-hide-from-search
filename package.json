@@ -17,6 +17,7 @@
     "gulp": "^3.9.0",
     "gulp-plumber": "^1.0.1",
     "gulp-shell": "^0.4.2",
-    "mac-sounds": "^0.1.1"
+    "mac-sounds": "^0.1.1",
+    "yargs": "^3.19.0"
   }
 }

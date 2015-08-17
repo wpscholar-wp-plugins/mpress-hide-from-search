@@ -3,15 +3,18 @@
 var gulp = require('gulp');
 var shell = require('gulp-shell');
 var plumber = require('gulp-plumber');
-var clean = require('del');
+var del = require('del');
 var sound = require('mac-sounds');
+var argv = require('yargs').argv;
 
 var config = {
     svn: {
+        url: 'http://plugins.svn.wordpress.org/mpress-hide-from-search/',
         src: [
             './**',
             '!**/svn',
             '!**/svn/**',
+            '!**/readme.md',
             '!**/package.json',
             '!**/node_modules',
             '!**/node_modules/**',
@@ -27,13 +30,13 @@ var config = {
     }
 };
 
-gulp.task('svn:checkout', shell.task('svn co http://plugins.svn.wordpress.org/mpress-hide-from-search/ svn'));
+gulp.task('svn:checkout', shell.task('svn co ' + config.svn.url + ' svn'));
 
 gulp.task('svn:clean', function () {
-    return clean(config.svn.clean);
+    return del(config.svn.clean);
 });
 
-gulp.task('svn:build', ['svn:clean'], function () {
+gulp.task('svn:copy', ['svn:clean'], function () {
     return gulp.src(config.svn.src)
         .pipe(plumber({
             errorHandler: function (err) {
@@ -42,4 +45,26 @@ gulp.task('svn:build', ['svn:clean'], function () {
             }
         }))
         .pipe(gulp.dest(config.svn.dest));
+});
+
+gulp.task('svn:addremove', ['svn:copy'], function () {
+    return gulp.src('*.js', {read: false})
+        .pipe(shell([
+            "svn st | grep ^? | sed '\''s/?    //'\'' | xargs svn add",
+            "svn st | grep ^! | sed '\''s/!    //'\'' | xargs svn rm"
+        ], {
+            cwd: './svn'
+        }))
+});
+
+gulp.task('svn:build', ['svn:addremove']);
+
+
+gulp.task('svn:tag', function () {
+    return gulp.src('*.js', {read: false})
+        .pipe(shell([
+            'svn cp trunk tags/' + argv.v
+        ], {
+            cwd: './svn'
+        }))
 });
