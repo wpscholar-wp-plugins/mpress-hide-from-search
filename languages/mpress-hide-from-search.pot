@@ -1,7 +1,7 @@
 # mPress Hide from Search
-# Copyright (C) 2014 Micah Wood
+# Copyright (C) 2014-2016 Micah Wood
 # This file is distributed under the same license as this plugin.
-# Micah Wood <micah@wpscholar.com>, 2014.
+# Micah Wood <micah@wpscholar.com>, 2014-2016.
 #
 #, fuzzy
 msgid ""

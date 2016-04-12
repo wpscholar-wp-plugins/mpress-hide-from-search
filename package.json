@@ -1,6 +1,6 @@
 {
   "name": "mpress-hide-from-search",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "The mPress Hide from Search plugin allows to you hide specific pages from WordPress search.",
   "main": "gulpfile.js",
   "scripts": {

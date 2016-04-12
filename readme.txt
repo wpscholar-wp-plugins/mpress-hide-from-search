@@ -3,8 +3,8 @@ Contributors: woodent
 Donate link: http://wpscholar.com/donate/
 Tags: search, WordPress search, hide from search, exclude from search, hide post, hidden posts, thank you pages
 Requires at least: 3.2
-Tested up to: 4.2.4
-Stable tag: 0.4.1
+Tested up to: 4.4.3
+Stable tag: 0.4.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -64,6 +64,9 @@ the bottom right of the screen and save your changes.  Viola! The post has been 
 1. Using the plugin is simple, just check the box to hide a page or post.
 
 == Changelog ==
+
+= 0.4.2 =
+* Tested in WordPress version 4.4.3
 
 = 0.4.1 =
 * Tested in WordPress version 4.2.4
