@@ -47,7 +47,7 @@ gulp.task('svn:copy', ['svn:clean'], function () {
         .pipe(gulp.dest(config.svn.dest));
 });
 
-gulp.task('svn:addremove', ['svn:copy'], function () {
+gulp.task('svn:addremove', function () {
     return gulp.src('*.js', {read: false})
         .pipe(shell([
             "svn st | grep ^? | sed '\''s/?    //'\'' | xargs svn add",
@@ -57,9 +57,6 @@ gulp.task('svn:addremove', ['svn:copy'], function () {
         }))
 });
 
-gulp.task('svn:build', ['svn:addremove']);
-
-
 gulp.task('svn:tag', function () {
     return gulp.src('*.js', {read: false})
         .pipe(shell([
@@ -68,3 +65,5 @@ gulp.task('svn:tag', function () {
             cwd: './svn'
         }))
 });
+
+gulp.task('project:build', ['svn:copy']);

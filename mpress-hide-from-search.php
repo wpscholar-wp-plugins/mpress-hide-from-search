@@ -4,7 +4,7 @@
  * Plugin Name: mPress Hide from Search
  * Plugin URI: http://wpscholar.com/wordpress-plugins/mpress-hide-from-search/
  * Description: This plugin allows you to hide individual posts, pages and other post types from the default WordPress search functionality.
- * Version: 0.4.2
+ * Version: 0.4.3
  * Author: Micah Wood
  * Author URI: http://wpscholar.com/
  * Text Domain: mpress-hide-from-search
@@ -26,7 +26,7 @@ if ( ! class_exists( 'mPress_Hide_From_Search' ) ) {
 		 *
 		 * @var string
 		 */
-		public static $version = '0.4.2';
+		public static $version = '0.4.3';
 
 		/**
 		 * @var mPress_Hide_From_Search
@@ -104,7 +104,7 @@ if ( ! class_exists( 'mPress_Hide_From_Search' ) ) {
 		 */
 		public function meta_box_content() {
 			global $post;
-			$hidden        = get_post_meta( $post->ID, $this->meta_key, true );
+			$hidden = get_post_meta( $post->ID, $this->meta_key, true );
 			$post_type_obj = get_post_type_object( $post->post_type );
 			wp_nonce_field( __FILE__, $this->nonce_name );
 			echo '<input type="checkbox" name="' . $this->meta_key . '" value="1"' . checked( $hidden, true, false ) . ' /> ';

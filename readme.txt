@@ -1,10 +1,10 @@
 === mPress Hide from Search ===
 Contributors: woodent
-Donate link: http://wpscholar.com/donate/
+Donate link: https://www.paypal.me/wpscholar
 Tags: search, WordPress search, hide from search, exclude from search, hide post, hidden posts, thank you pages
 Requires at least: 3.2
-Tested up to: 4.4.3
-Stable tag: 0.4.2
+Tested up to: 4.5.2
+Stable tag: 0.4.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -65,6 +65,9 @@ the bottom right of the screen and save your changes.  Viola! The post has been 
 
 == Changelog ==
 
+= 0.4.3 =
+* Tested in WordPress version 4.5.2
+
 = 0.4.2 =
 * Tested in WordPress version 4.4.3
 
@@ -90,6 +93,9 @@ the bottom right of the screen and save your changes.  Viola! The post has been 
 * Initial commit
 
 == Upgrade Notice ==
+
+= 0.4.3 =
+Plugin updated to reflect that it works with WordPress version 4.5.2
 
 = 0.4.1 =
 Plugin updated to reflect that it works with WordPress version 4.2.4
