@@ -1,13 +1,8 @@
-'use strict';
+let gulp = require('gulp');
+let shell = require('gulp-shell');
+let del = require('del');
 
-var gulp = require('gulp');
-var shell = require('gulp-shell');
-var plumber = require('gulp-plumber');
-var del = require('del');
-var sound = require('mac-sounds');
-var argv = require('yargs').argv;
-
-var config = {
+let config = {
     svn: {
         url: 'http://plugins.svn.wordpress.org/mpress-hide-from-search/',
         src: [
@@ -37,33 +32,7 @@ gulp.task('svn:clean', function () {
 });
 
 gulp.task('svn:copy', ['svn:clean'], function () {
-    return gulp.src(config.svn.src)
-        .pipe(plumber({
-            errorHandler: function (err) {
-                sound('blow');
-                console.log(err);
-            }
-        }))
-        .pipe(gulp.dest(config.svn.dest));
+    return gulp.src(config.svn.src).pipe(gulp.dest(config.svn.dest));
 });
 
-gulp.task('svn:addremove', function () {
-    return gulp.src('*.js', {read: false})
-        .pipe(shell([
-            "svn st | grep ^? | sed '\''s/?    //'\'' | xargs svn add",
-            "svn st | grep ^! | sed '\''s/!    //'\'' | xargs svn rm"
-        ], {
-            cwd: './svn'
-        }))
-});
-
-gulp.task('svn:tag', function () {
-    return gulp.src('*.js', {read: false})
-        .pipe(shell([
-            'svn cp trunk tags/' + argv.v
-        ], {
-            cwd: './svn'
-        }))
-});
-
-gulp.task('project:build', ['svn:copy']);
+gulp.task('svn:stage', ['svn:copy']);

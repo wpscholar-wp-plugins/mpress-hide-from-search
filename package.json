@@ -3,16 +3,17 @@
   "description": "The mPress Hide from Search plugin allows to you hide specific pages from WordPress search.",
   "author": "Micah Wood <micah@wpscholar.com> (http://wpscholar.com)",
   "license": "GPL-3.0+",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/wpscholar/mpress-hide-from-search.git"
   },
-  "devDependencies": {
-    "del": "^1.2.1",
+  "dependencies": {
     "gulp": "^3.9.1",
-    "gulp-plumber": "^1.1.0",
     "gulp-shell": "^0.4.3",
-    "mac-sounds": "^0.1.1",
     "yargs": "^3.32.0"
+  },
+  "scripts": {
+    "postinstall": "npm prune"
   }
 }

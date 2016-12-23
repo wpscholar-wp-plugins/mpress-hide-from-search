@@ -3,8 +3,8 @@ Contributors: woodent
 Donate link: https://www.paypal.me/wpscholar
 Tags: search, WordPress search, hide from search, exclude from search, hide post, hidden posts, thank you pages
 Requires at least: 3.2
-Tested up to: 4.5.2
-Stable tag: 0.4.3
+Tested up to: 4.7
+Stable tag: 1.0.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -65,6 +65,12 @@ the bottom right of the screen and save your changes.  Viola! The post has been 
 
 == Changelog ==
 
+= 1.0.0 =
+* Tested in WordPress version 4.7
+* Escaped translated strings, for security.
+* Converted singleton to static class.
+* Updated .pot translation file to include additional plugin information.
+
 = 0.4.3 =
 * Tested in WordPress version 4.5.2
 
@@ -93,6 +99,9 @@ the bottom right of the screen and save your changes.  Viola! The post has been 
 * Initial commit
 
 == Upgrade Notice ==
+
+= 1.0.0 =
+Plugin updated to reflect that it words with WordPress version 4.7. Escaped translated strings for security.
 
 = 0.4.3 =
 Plugin updated to reflect that it works with WordPress version 4.5.2
