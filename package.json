@@ -9,11 +9,11 @@
     "url": "https://github.com/wpscholar/mpress-hide-from-search.git"
   },
   "dependencies": {
+    "del": "^2.2.2",
     "gulp": "^3.9.1",
-    "gulp-shell": "^0.4.3",
-    "yargs": "^3.32.0"
+    "gulp-shell": "^0.4.3"
   },
   "scripts": {
-    "postinstall": "npm prune"
+    "post-install": "npm prune"
   }
 }

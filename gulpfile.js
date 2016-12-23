@@ -7,6 +7,7 @@ let config = {
         url: 'http://plugins.svn.wordpress.org/mpress-hide-from-search/',
         src: [
             './**',
+            '!**/screenshot-1.png',
             '!**/svn',
             '!**/svn/**',
             '!**/readme.md',
