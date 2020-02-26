@@ -12,6 +12,7 @@ let config = {
             '!**/svn/**',
             '!**/readme.md',
             '!**/package.json',
+            '!**/package-lock.json',
             '!**/node_modules',
             '!**/node_modules/**',
             '!**/bower.json',

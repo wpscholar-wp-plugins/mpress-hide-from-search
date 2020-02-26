@@ -10,10 +10,9 @@
   },
   "dependencies": {
     "del": "^2.2.2",
-    "gulp": "^3.9.1",
-    "gulp-shell": "^0.4.3"
+    "gulp": "^4.0.2",
+    "gulp-shell": "^0.7.1"
   },
   "scripts": {
     "post-install": "npm prune"
-  }
-}
+  }}
