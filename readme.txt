@@ -1,5 +1,5 @@
 === Hide from Search ===
-Contributors: wpscholar, woodent
+Contributors: wpscholar
 Donate link: https://www.paypal.me/wpscholar
 Tags: search, WordPress search, hide from search, exclude from search, hide post, hidden posts, thank you pages
 Requires at least: 3.2
