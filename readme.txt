@@ -1,9 +1,9 @@
-=== mPress Hide from Search ===
+=== Hide from Search ===
 Contributors: wpscholar, woodent
 Donate link: https://www.paypal.me/wpscholar
 Tags: search, WordPress search, hide from search, exclude from search, hide post, hidden posts, thank you pages
 Requires at least: 3.2
-Tested up to: 5.3.2
+Tested up to: 5.4
 Stable tag: 1.0.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -12,7 +12,7 @@ Hide individual public pages from WordPress search, such as confirmation and dow
 
 == Description ==
 
-The **mPress Hide from Search** plugin allows to you hide specific pages from WordPress search.
+The **Hide from Search** plugin allows to you hide specific pages from WordPress search.
 
 = Why? =
 
@@ -44,7 +44,7 @@ If you don't meet the below requirements, I highly recommend you upgrade your Wo
 = The Easy Way =
 
 1. In your WordPress admin, go to 'Plugins' and then click on 'Add New'.
-2. In the search box, type in 'mPress Hide from Search' and hit enter.  This plugin should be the first and likely the only result.
+2. In the search box, type in 'Hide from Search' and hit enter.  This plugin should be the first and likely the only result.
 3. Click on the 'Install' link.
 4. Once installed, click the 'Activate this plugin' link.
 
