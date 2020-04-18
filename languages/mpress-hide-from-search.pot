@@ -1,58 +1,41 @@
-#, fuzzy
+# Copyright (C) 2020 Micah Wood
+# This file is distributed under the GPL3.
 msgid ""
 msgstr ""
-"Project-Id-Version: mpress-hide-from-search 0.0.4\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-23 04:53+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Micah Wood <micah@wpscholar.com>\n"
-"Language-Team: Micah Wood <micah@wpscholar.com>\n"
-"Language: \n"
+"Project-Id-Version: Hide from Search 1.0.1\n"
+"Report-Msgid-Bugs-To: "
+"https://wordpress.org/support/plugin/mpress-hide-from-search\n"
+"POT-Creation-Date: 2020-04-18 23:48:06+00:00\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
-"X-Generator: Loco - https://localise.biz/"
+"PO-Revision-Date: 2020-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: node-wp-i18n 1.2.3\n"
 
-#: mpress-hide-from-search.php:69 svn/trunk/mpress-hide-from-search.php:93 
-#: svn/tags/0.1/index.php:39 svn/tags/0.2/index.php:42 
-#: svn/tags/0.3/mpress-hide-from-search.php:50 
-#: svn/tags/0.4/mpress-hide-from-search.php:93 
-#: svn/tags/0.4.1/mpress-hide-from-search.php:93 
-#: svn/tags/0.4.2/mpress-hide-from-search.php:93 
-#: svn/tags/0.4.3/mpress-hide-from-search.php:93
+#. Plugin Name of the plugin/theme
 msgid "Hide from Search"
 msgstr ""
 
-#: mpress-hide-from-search.php:90 svn/trunk/mpress-hide-from-search.php:112 
-#: svn/tags/0.1/index.php:51 svn/tags/0.2/index.php:54 
-#: svn/tags/0.3/mpress-hide-from-search.php:63 
-#: svn/tags/0.4/mpress-hide-from-search.php:112 
-#: svn/tags/0.4.1/mpress-hide-from-search.php:112 
-#: svn/tags/0.4.2/mpress-hide-from-search.php:112 
-#: svn/tags/0.4.3/mpress-hide-from-search.php:112
-#, php-format
+#: mpress-hide-from-search.php:98
 msgid "Hide this %s from WordPress search"
 msgstr ""
 
-#. Name of the plugin
-msgid "mPress Hide from Search"
+#. Plugin URI of the plugin/theme
+msgid "https://wpscholar.com/wordpress-plugins/mpress-hide-from-search/"
 msgstr ""
 
-#. Description of the plugin
+#. Description of the plugin/theme
 msgid ""
 "This plugin allows you to hide individual posts, pages and other post types "
 "from the default WordPress search functionality."
 msgstr ""
 
-#. URI of the plugin
-msgid "http://wpscholar.com/wordpress-plugins/mpress-hide-from-search/"
-msgstr ""
-
-#. Author of the plugin
+#. Author of the plugin/theme
 msgid "Micah Wood"
 msgstr ""
 
-#. Author URI of the plugin
-msgid "http://wpscholar.com/"
+#. Author URI of the plugin/theme
+msgid "https://wpscholar.com/"
 msgstr ""
