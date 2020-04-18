@@ -7,12 +7,20 @@
  * Version: 1.0.1
  * Author: Micah Wood
  * Author URI: https://wpscholar.com/
+ * Requires at least: 3.2
+ * Requires PHP: 5.3
  * Text Domain: mpress-hide-from-search
+ * Domain Path: languages
  * License: GPL3
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  *
  * Copyright 2014-2020 by Micah Wood - All rights reserved.
  */
+
+// Load translations
+add_action( 'plugins_loaded', function () {
+	load_plugin_textdomain( basename( __DIR__ ), false, basename( __DIR__ ) . '/languages/' );
+} );
 
 if ( ! class_exists( 'mPress_Hide_From_Search' ) ) {
 
