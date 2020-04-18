@@ -1,0 +1,13 @@
+{
+    "name": "wpscholar/mpress-hide-from-search",
+    "description": "Hide specific pages from WordPress search.",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Micah Wood",
+            "email": "micah@wpscholar.com"
+        }
+    ],
+    "require": {}
+}
