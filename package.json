@@ -1,10 +1,10 @@
 {
   "name": "mpress-hide-from-search",
-  "description": "Hide individual posts, pages and other post types from the default WordPress search functionality.",
+  "description": "Hide individual WordPress pages from search engines and/or WordPress search results.",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "npx yamllint **/*.yml",
+    "lint": "yamllint --ignore=node_modules/** **/*.yml",
     "i18n": "wpi18n addtextdomain && wpi18n makepot"
   },
   "repository": {
@@ -30,10 +30,10 @@
   },
   "lint-staged": {
     "**/*.yml": [
-      "npm run lint"
+      "yamllint --ignore=node_modules/**"
     ],
     "**/*.php": [
-      "composer run-script lint"
+      "vendor/bin/phpcs -s"
     ]
   }
 }

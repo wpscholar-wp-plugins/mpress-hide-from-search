@@ -3,11 +3,11 @@
 ![Deploy to WordPress.org](https://github.com/wpscholar-wp-plugins/hide-from-search/workflows/Deploy%20to%20WordPress.org/badge.svg?branch=master&event=push)
 
 ## Description
-The **Hide from Search** plugin allows to you hide specific pages from WordPress search.
+The **Hide from Search** plugin allows you to hide individual WordPress pages from search engines and/or WordPress search results.
 
-It isn't uncommon to have pages on your site that are public, but not intended to be found. Take, for example, a download page where people who have signed up for your email newsletter can download your amazing white paper.  You don't want just anyone to be able to download your white paper, but the page has to be public because people who sign up for your newsletter aren't going to be logged into your site.  You were smart enough to use your favorite SEO plugin and block the search engines from indexing that page, but now you have realized that people who perform a search on your site for the title of the white paper are taken directly to the download page.  The solution?  Download this plugin and hide your download page from WordPress search!
+It isn't uncommon to have pages on your site that are public, but not intended to be found. Take, for example, a download page where people who have signed up for your email newsletter can download your amazing white paper.  You don't want just anyone to be able to download your white paper, but the page has to be public because people who sign up for your newsletter aren't going to be logged into your site.  You can't have people who perform a search for the title of your whitepaper finding it in search.  The solution?  Download this plugin and hide your download page from WordPress search as well as search engines!
 
-https://wordpress.org/plugins/mpress-hide-from-search/
+[View plugin on WordPress](https://wordpress.org/plugins/mpress-hide-from-search/)
 
 ### Features
 - Works with custom post types

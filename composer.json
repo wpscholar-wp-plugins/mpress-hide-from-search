@@ -1,23 +1,45 @@
 {
-  "name": "wpscholar/mpress-hide-from-search",
-  "description": "Hide specific pages from WordPress search.",
-  "type": "wordpress-plugin",
-  "license": "GPL-2.0-or-later",
-  "authors": [
-    {
-      "name": "Micah Wood",
-      "email": "micah@wpscholar.com"
+    "name": "wpscholar/mpress-hide-from-search",
+    "description": "Hide individual WordPress pages from search engines and/or WordPress search results.",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Micah Wood",
+            "homepage": "https://wpscholar.com"
+        }
+    ],
+    "support": {
+        "source": "https://github.com/wpscholar-wp-plugins/mpress-hide-from-search",
+        "issues": "https://github.com/wpscholar-wp-plugins/mpress-hide-from-search/issues"
+    },
+    "autoload": {
+        "psr-4": {
+            "HideFromSearch\\": "includes"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "require": {
+        "wp-forge/container": "^1.0",
+        "wp-forge/wp-plugin-check": "^1.0",
+        "wp-forge/wp-upgrade-handler": "^1.0"
+    },
+    "require-dev": {
+        "wp-cli/wp-cli": "^2.4",
+        "wp-cli/i18n-command": "^2.2",
+        "wpscholar/phpcs-standards-wpscholar": "^1.0"
+    },
+    "scripts": {
+        "fix": "vendor/bin/phpcbf . -s",
+        "i18n": "vendor/bin/wp i18n make-pot . ./languages/mpress-hide-from-search.pot --headers='{\"POT-Creation-Date\":null}' --exclude=tests",
+        "lint": "vendor/bin/phpcs . -s"
+    },
+    "scripts-descriptions": {
+        "fix": "Automatically fix coding standards issues where possible.",
+        "i18n": "Generate a .pot file for translation.",
+        "lint": "Check files against coding standards."
     }
-  ],
-  "require-dev": {
-    "wpscholar/phpcs-standards-wpscholar": "@stable"
-  },
-  "scripts": {
-    "fix": "vendor/bin/phpcbf . -s",
-    "lint": "vendor/bin/phpcs . -s"
-  },
-  "scripts-descriptions": {
-    "fix": "Automatically fix coding standards issues where possible.",
-    "lint": "Check files against coding standards."
-  }
 }

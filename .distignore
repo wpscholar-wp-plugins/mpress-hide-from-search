@@ -8,23 +8,13 @@ node_modules
 
 # Files
 .distignore
-.editorconfig
-.gitattributes
 .gitignore
-composer.json
-composer.lock
-Gruntfile.js
-gulpfile.js
-package.json
-package-lock.json
-phpunit.xml
-phpunit.xml.dist
-readme.md
-README.md
-wp-cli.local.yml
 
 # File Types
+*.json
+*.lock
 *.log
+*.md
 *.sql
 *.tar.gz
 *.xml
