@@ -105,7 +105,7 @@ class Plugin {
 	 */
 	public static function registerFields() {
 
-		remove_filter( 'register_meta_args', '_wp_register_meta_args_whitelist' );
+		remove_filter( 'register_meta_args', '_wp_register_meta_args_allowed_list' );
 
 		register_meta(
 			'post',
