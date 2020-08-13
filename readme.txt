@@ -5,7 +5,7 @@ Tags: search, search engines, WordPress search, hide from search, exclude from s
 Requires at least: 5.0
 Requires PHP: 5.6
 Tested up to: 5.5
-Stable tag: 1.1
+Stable tag: 1.1.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -66,6 +66,9 @@ the bottom right of the screen and save your changes.  Viola! The post has been 
 
 == Changelog ==
 
+= 1.1.1 =
+* Bugfix: Function _wp_register_meta_args_whitelist changed to _wp_register_meta_args_allowed_list in WordPress 5.5.
+
 = 1.1 =
 * Implemented ability to hide from search engines as well.
 
@@ -110,8 +113,11 @@ the bottom right of the screen and save your changes.  Viola! The post has been 
 
 == Upgrade Notice ==
 
+= 1.1.1 =
+Updated to work with WordPress 5.5.
+
 = 1.1 =
-* Implemented ability to hide from search engines as well.
+Implemented ability to hide from search engines as well.
 
 = 1.0.2 =
 
