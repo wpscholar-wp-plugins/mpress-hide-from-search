@@ -105,6 +105,9 @@ class Plugin {
 	 */
 	public static function registerFields() {
 
+		// Up to WP 5.4
+		remove_filter( 'register_meta_args', '_wp_register_meta_args_whitelist' );
+		// WP 5.5+
 		remove_filter( 'register_meta_args', '_wp_register_meta_args_allowed_list' );
 
 		register_meta(
