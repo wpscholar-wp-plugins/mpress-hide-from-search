@@ -1,4 +1,7 @@
 /node_modules
 /vendor
 
+# Cypress
 cypress.env.json
+/tests/cypress/screenshots
+/tests/cypress/videos
