@@ -60,12 +60,22 @@ jobs:
         run: npm install
 
       - name: Install WordPress
-        run: |
-          chmod -R 767 ./
-          npx wp-env start
+        run: npx wp-env start
 
       - name: Configure Cypress
         run: mv cypress-sample.env.json cypress.env.json
 
       - name: Run Cypress Tests
         run: npm run test
+
+      - name: Store screenshots
+        uses: actions/upload-artifact@v2
+        with:
+          name: screenshots
+          path: ./tests/cypress/screenshots
+
+      - name: Store videos
+        uses: actions/upload-artifact@v2
+        with:
+          name: videos
+          path: ./tests/cypress/videos
