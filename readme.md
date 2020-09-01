@@ -1,6 +1,6 @@
 # Hide From Search
 
-![Deploy to WordPress.org](https://github.com/wpscholar-wp-plugins/hide-from-search/workflows/Deploy%20to%20WordPress.org/badge.svg?branch=master&event=push)
+![Deploy to WordPress.org](https://github.com/wpscholar-wp-plugins/mpress-hide-from-search/workflows/Deploy%20to%20WordPress.org/badge.svg)
 
 ## Description
 The **Hide from Search** plugin allows you to hide individual WordPress pages from search engines and/or WordPress search results.
