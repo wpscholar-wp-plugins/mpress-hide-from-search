@@ -7,9 +7,6 @@ context(
 		function loadPage() {
 			cy.visit('/wp-admin/post.php?post=1&action=edit');
 			cy.maybeDismissGutenbergWelcomeModal();
-			cy.document().then(doc => {
-				doc.getElementById('_wpnonce')
-			})
 		}
 
 		before(() => {
