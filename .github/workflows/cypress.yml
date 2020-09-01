@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - master
+    paths-ignore:
+      - '.github/**'
+      - '!.github/workflows/cypress.yml'
+      - '**.md'
   pull_request:
     types: [opened, edited, synchronize, reopened, ready_for_review]
   pull_request_review:
