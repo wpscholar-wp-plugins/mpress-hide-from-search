@@ -5,6 +5,7 @@
 .github
 .wporg
 node_modules
+tests
 
 # Files
 .distignore

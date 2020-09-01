@@ -3,7 +3,7 @@
   "description": "Hide individual WordPress pages from search engines and/or WordPress search results.",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npx cypress run",
     "lint": "yamllint --ignore=node_modules/** **/*.yml",
     "i18n": "wpi18n addtextdomain && wpi18n makepot"
   },
@@ -18,8 +18,12 @@
   },
   "homepage": "https://github.com/wpscholar-wp-plugins/mpress-hide-from-search#readme",
   "devDependencies": {
+    "@testing-library/cypress": "^6.0.1",
+    "@wordpress/env": "^1.6.0",
+    "cypress": "^4.0.2",
+    "cypress-axe": "^0.8.1",
     "husky": "^4.2.5",
-    "lint-staged": "^10.1.5",
+    "lint-staged": "^10.2.13",
     "node-wp-i18n": "^1.2.3",
     "yaml-lint": "^1.2.4"
   },
