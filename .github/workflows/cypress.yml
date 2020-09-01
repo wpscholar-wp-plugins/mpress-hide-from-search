@@ -68,13 +68,13 @@ jobs:
       - name: Run Cypress Tests
         run: npm run test
 
-      - name: Store screenshots
+      - name: Store screenshots of test failures
         uses: actions/upload-artifact@v2
         with:
           name: screenshots
           path: ./tests/cypress/screenshots
 
-      - name: Store videos
+      - name: Store videos of test failures
         uses: actions/upload-artifact@v2
         with:
           name: videos
