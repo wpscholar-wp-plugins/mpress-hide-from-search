@@ -53,24 +53,20 @@ context(
 				.should('be.visible');
 		})
 
-		it.skip('Should save', () => {
+		it('Should save', () => {
 
-			// Listen for the API call to save the post
+			// Listen for the POST request to save the post meta
 			cy.server();
-			cy.route('GET', '**/wp/v2/posts/1*').as('fetch');
-			cy.route('POST', '**/wp/v2/posts/1*').as('update');
+			cy.route('POST', '**post.php?post=1&action=edit&meta-box-loader=1*').as('meta');
 
 			// Check checkboxes
 			cy.findByLabelText('Hide from WordPress search').scrollIntoView().check();
 			cy.findByLabelText('Hide from search engines').scrollIntoView().check();
 
-			// Save
+			// Save and reload
 			cy.findByRole('button', {name: 'Update'}).click();
-			cy.wait('@update');
-
-			// Reload page
+			cy.wait('@meta');
 			loadPage();
-			cy.wait('@fetch');
 
 			// Checkboxes should be checked
 			cy.findByLabelText('Hide from WordPress search').should('be.checked');
@@ -80,13 +76,10 @@ context(
 			cy.findByLabelText('Hide from WordPress search').scrollIntoView().uncheck();
 			cy.findByLabelText('Hide from search engines').scrollIntoView().uncheck();
 
-			// Save
+			// Save and reload
 			cy.findByRole('button', {name: 'Update'}).click();
-			cy.wait('@update');
-
-			// Reload page
+			cy.wait('@meta');
 			loadPage();
-			cy.wait('@fetch');
 
 			// Checkboxes should be unchecked
 			cy.findByLabelText('Hide from WordPress search').should('not.be.checked');

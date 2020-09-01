@@ -21,7 +21,8 @@ Cypress.on('window:before:load', (win) => {
 });
 
 Cypress.Cookies.defaults({
-	preserve: /wp|wordpress/
+	preserve: /wp|wordpress/, // Cypress 5.0+
+	whitelist: /wp|wordpress/, // Cypress <5.0
 });
 
 before(() => {
