@@ -84,9 +84,10 @@ class Plugin {
 	 * @return string
 	 */
 	public static function hideFromWordPressSearch( $where ) {
+
 		global $wpdb;
 
-		if ( is_search() ) {
+		if ( is_search() && ! is_admin() ) {
 			$where .= $wpdb->prepare( "AND ID NOT IN ( SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key = %s AND meta_value = %d )", '_hide_from_search_wp', 1 );
 		}
 
