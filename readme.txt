@@ -66,6 +66,10 @@ the bottom right of the screen and save your changes.  Viola! The post has been 
 
 == Changelog ==
 
+= 1.1.3 =
+* Fix PHP notice when Yoast SEO is active
+* General security updates for dependencies.
+
 = 1.1.2 =
 * Fix issue where posts were hidden from users when searching within the WordPress admin area.
 
@@ -115,6 +119,9 @@ the bottom right of the screen and save your changes.  Viola! The post has been 
 * Initial commit
 
 == Upgrade Notice ==
+
+= 1.1.3 =
+* Bugfix and security release.
 
 = 1.1.2 =
 * Fix issue where posts were hidden from users when searching within the WordPress admin area.
