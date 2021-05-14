@@ -175,7 +175,7 @@ class Plugin {
 					return array_filter(
 						$keys,
 						function ( $value ) {
-							return is_array( $value ) && 'hide-from-search' === $value['plugin'];
+							return is_array( $value ) && isset( $value['plugin'] ) && 'hide-from-search' === $value['plugin'];
 						}
 					);
 				}
