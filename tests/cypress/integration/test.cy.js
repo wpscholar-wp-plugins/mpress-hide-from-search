@@ -4,13 +4,9 @@ context(
 	'Hide from Search Meta Box',
 	() => {
 
-		function loadPage() {
+		before(() => {
 			cy.visit('/wp-admin/post.php?post=1&action=edit');
 			cy.maybeDismissGutenbergWelcomeModal();
-		}
-
-		before(() => {
-			loadPage();
 		})
 
 		it('Is Accessible', () => {
