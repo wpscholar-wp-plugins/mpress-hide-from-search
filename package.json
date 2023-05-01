@@ -7,7 +7,8 @@
     "lint": "yamllint --ignore=node_modules/** **/*.yml",
     "i18n": "wpi18n addtextdomain && wpi18n makepot",
     "prepare": "husky install",
-    "postprepare": "npm run set-wp-version"
+    "postprepare": "npm run set-wp-version",
+    "set-wp-version": "node ./set-latest-wp-version.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "cypress-axe": "^1.4.0",
     "husky": "^8.0.0",
     "lint-staged": "^13.2.2",
+    "node-fetch": "^2.6.9",
     "node-wp-i18n": "^1.2.7",
     "yaml-lint": "^1.7.0"
   },
