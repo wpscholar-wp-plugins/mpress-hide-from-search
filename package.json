@@ -27,7 +27,7 @@
     "cypress-axe": "^1.4.0",
     "husky": "^8.0.0",
     "lint-staged": "^13.2.2",
-    "node-fetch": "^2.6.9",
+    "node-fetch": "^3.3.1",
     "node-wp-i18n": "^1.2.7",
     "yaml-lint": "^1.7.0"
   },
