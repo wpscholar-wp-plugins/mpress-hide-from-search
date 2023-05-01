@@ -44,13 +44,3 @@ Cypress.Commands.add('login', (username, password) => {
 			}
 		});
 });
-
-Cypress.Commands.add('maybeDismissGutenbergWelcomeModal', () => {
-	cy
-		.window()
-		.then(({wp}) => {
-			if (wp && wp.data && wp.data.select && wp.data.select("core/edit-post").isFeatureActive("welcomeGuide")) {
-				wp.data.dispatch("core/edit-post").toggleFeature("welcomeGuide");
-			}
-		});
-});
