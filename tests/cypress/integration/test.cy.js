@@ -91,13 +91,13 @@ context(
 			cy.get('.editor-post-publish-button').click();
 			cy.wait('@meta');
 			loadPage();
-			dismissModal();
 
 			// Checkboxes should be checked
 			cy.get('@wpCheckbox').should('be.checked');
 			cy.get('@searchCheckbox').should('be.checked');
 
 			// Uncheck boxes
+			dismissModal();
 			cy.get('@wpCheckbox').scrollIntoView().uncheck();
 			cy.get('@searchCheckbox').scrollIntoView().uncheck();
 
@@ -105,7 +105,6 @@ context(
 			cy.get('.editor-post-publish-button').click();
 			cy.wait('@meta');
 			loadPage();
-			dismissModal();
 
 			// Checkboxes should be unchecked
 			cy.get('@wpCheckbox').should('not.be.checked');
