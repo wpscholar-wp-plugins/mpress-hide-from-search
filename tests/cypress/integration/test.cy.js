@@ -4,8 +4,20 @@ context(
 	'Hide from Search Meta Box',
 	() => {
 
-		before(() => {
+		function loadPage() {
 			cy.visit('/wp-admin/post.php?post=1&action=edit');
+			cy
+				.document()
+				.then((document) => {
+					const overlay = document.querySelector('.components-modal__screen-overlay');
+					if (overlay) {
+						overlay.style.display = 'none';
+					}
+				});
+		}
+
+		before(() => {
+			loadPage();
 		})
 
 		it('Is Accessible', () => {
@@ -14,11 +26,7 @@ context(
 		})
 
 		it('Should be visible', () => {
-			cy
-				.document()
-				.then((document) => {
-					document.querySelector('.components-modal__screen-overlay').style.display = 'none';
-				});
+			loadPage();
 			cy
 				.get('#hide-from-search')
 				.scrollIntoView()
