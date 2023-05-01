@@ -6,6 +6,7 @@ context(
 
 		function loadPage() {
 			cy.visit('/wp-admin/post.php?post=1&action=edit');
+			cy.maybeDismissGutenbergWelcomeModal();
 		}
 
 		before(() => {

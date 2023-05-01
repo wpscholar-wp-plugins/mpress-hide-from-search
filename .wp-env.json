@@ -1,6 +1,5 @@
 {
   "plugins": [
-    ".",
-    "WordPress/disable-welcome-messages-and-tips"
+    "."
   ]
 }
