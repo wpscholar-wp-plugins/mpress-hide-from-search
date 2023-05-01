@@ -17,7 +17,7 @@ describe('Page', () => {
 	it('Is running the correct PHP versions', () => {
 
 		cy.get('#health-check-accordion-block-wp-server').prev().click();
-		cy.get('#health-check-accordion-block-wp-server').find('tr').eq(2).find('td').last().contains(Cypress.env('phpVersion'));
+		cy.get('#health-check-accordion-block-wp-server').find('tr').eq(2).find('td').last().contains(new RegExp(`^${Cypress.env('phpVersion')}`));
 
 	})
 
