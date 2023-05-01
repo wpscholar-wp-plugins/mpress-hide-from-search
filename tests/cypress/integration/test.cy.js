@@ -6,19 +6,6 @@ context(
 
 		before(() => {
 			cy.visit('/wp-admin/post.php?post=1&action=edit');
-			cy
-				.window()
-				.then((win) => {
-					const {wp} = win;
-					if (wp.data && wp.data.select('core/edit-post').isFeatureActive('welcomeGuide')) {
-						wp.data.dispatch('core/edit-post').toggleFeature('welcomeGuide');
-					}
-				});
-			cy
-				.document()
-				.then((doc) => {
-					doc.querySelector('.components-modal__screen-overlay').style.display = 'none';
-				});
 		})
 
 		it('Is Accessible', () => {
@@ -27,6 +14,11 @@ context(
 		})
 
 		it('Should be visible', () => {
+			cy
+				.document()
+				.then((document) => {
+					document.querySelector('.components-modal__screen-overlay').style.display = 'none';
+				});
 			cy
 				.get('#hide-from-search')
 				.scrollIntoView()
