@@ -32,8 +32,8 @@ global $pagenow;
 if ( 'plugins.php' === $pagenow ) {
 	$plugin_check = new WP_Forge_Plugin_Check( __FILE__ );
 
-	$plugin_check->min_php_version = '5.6';
-	$plugin_check->min_wp_version  = '5.0';
+	$plugin_check->min_php_version = '7.4';
+	$plugin_check->min_wp_version  = '6.0';
 	$plugin_check->check_plugin_requirements();
 }
 
