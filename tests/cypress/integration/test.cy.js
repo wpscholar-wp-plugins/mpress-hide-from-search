@@ -6,7 +6,13 @@ context(
 
 		before(() => {
 			cy.visit('/wp-admin/post.php?post=1&action=edit');
-			cy.maybeDismissGutenbergWelcomeModal();
+			cy
+				.window()
+				.then(({wp}) => {
+					if (wp.data && wp.data.select('core/edit-post').isFeatureActive('welcomeGuide')) {
+						wp.data.dispatch('core/edit-post').toggleFeature('welcomeGuide');
+					}
+				});
 		})
 
 		it('Is Accessible', () => {
