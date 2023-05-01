@@ -6,7 +6,7 @@
     "WP_DEBUG_DISPLAY": false,
     "FS_METHOD": "direct"
   },
-  "phpVersion": "8.1",
+  "phpVersion": "8.0",
   "plugins": [
     "."
   ],
