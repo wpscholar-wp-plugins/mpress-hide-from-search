@@ -27,7 +27,7 @@ context(
 
 		it('Should be expanded', () => {
 			cy
-				.findByRole('button', {name: 'Toggle panel: Hide from Search'})
+				.get('#hide-from-search button.handlediv')
 				.within(($btn) => {
 					if ($btn.attr('aria-expanded') === 'false') {
 						cy.root().click();
@@ -41,49 +41,54 @@ context(
 
 		it('Should have "Hide from WordPress search" toggle', () => {
 			cy
-				.findByLabelText('Hide from WordPress search')
+				.get('#hide-from-search input[type="checkbox"][name="_hide_from_search_wp"]')
 				.scrollIntoView()
 				.should('be.visible');
 		})
 
 		it('Should have "Hide from search engines" toggle', () => {
 			cy
-				.findByLabelText('Hide from search engines')
+				.get('#hide-from-search input[type="checkbox"][name="_hide_from_search_engines"]')
 				.scrollIntoView()
 				.should('be.visible');
 		})
 
 		it('Should save', () => {
 
+			cy.get('#hide-from-search input[type="checkbox"][name="_hide_from_search_wp"]').as('wpCheckbox');
+			cy.get('#hide-from-search input[type="checkbox"][name="_hide_from_search_engines"]').as('searchCheckbox');
+
 			// Listen for the POST request to save the post meta
-			cy.server();
-			cy.route('POST', '**post.php?post=1&action=edit&meta-box-loader=1*').as('meta');
+			cy.intercept({
+				method: 'POST',
+				url: '**post.php?post=1&action=edit&meta-box-loader=1*'
+			}).as('meta');
 
 			// Check checkboxes
-			cy.findByLabelText('Hide from WordPress search').scrollIntoView().check();
-			cy.findByLabelText('Hide from search engines').scrollIntoView().check();
+			cy.get('@wpCheckbox').scrollIntoView().check();
+			cy.get('@searchCheckbox').scrollIntoView().check();
 
 			// Save and reload
-			cy.findByRole('button', {name: 'Update'}).click();
+			cy.get('.editor-post-publish-button').click();
 			cy.wait('@meta');
 			loadPage();
 
 			// Checkboxes should be checked
-			cy.findByLabelText('Hide from WordPress search').should('be.checked');
-			cy.findByLabelText('Hide from search engines').should('be.checked');
+			cy.get('@wpCheckbox').should('be.checked');
+			cy.get('@searchCheckbox').should('be.checked');
 
 			// Uncheck boxes
-			cy.findByLabelText('Hide from WordPress search').scrollIntoView().uncheck();
-			cy.findByLabelText('Hide from search engines').scrollIntoView().uncheck();
+			cy.get('@wpCheckbox').scrollIntoView().uncheck();
+			cy.get('@searchCheckbox').scrollIntoView().uncheck();
 
 			// Save and reload
-			cy.findByRole('button', {name: 'Update'}).click();
+			cy.get('.editor-post-publish-button').click();
 			cy.wait('@meta');
 			loadPage();
 
 			// Checkboxes should be unchecked
-			cy.findByLabelText('Hide from WordPress search').should('not.be.checked');
-			cy.findByLabelText('Hide from search engines').should('not.be.checked');
+			cy.get('@wpCheckbox').should('not.be.checked');
+			cy.get('@searchCheckbox').should('not.be.checked');
 
 		})
 

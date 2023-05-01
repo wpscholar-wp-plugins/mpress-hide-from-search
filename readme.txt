@@ -4,8 +4,8 @@ Donate link: https://www.paypal.me/wpscholar
 Tags: search, search engines, WordPress search, hide from search, exclude from search, hide post, hidden posts
 Requires at least: 5.0
 Requires PHP: 5.6
-Tested up to: 5.7
-Stable tag: 1.1.3
+Tested up to: 6.2
+Stable tag: 1.1.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -66,6 +66,9 @@ the bottom right of the screen and save your changes.  Viola! The post has been 
 
 == Changelog ==
 
+= 1.1.4 =
+* Minor maintenance release
+
 = 1.1.3 =
 * Fix PHP notice when Yoast SEO is active
 * General security updates for dependencies.
@@ -119,6 +122,9 @@ the bottom right of the screen and save your changes.  Viola! The post has been 
 * Initial commit
 
 == Upgrade Notice ==
+
+= 1.1.4 =
+* Minor maintenance release
 
 = 1.1.3 =
 * Bugfix and security release.

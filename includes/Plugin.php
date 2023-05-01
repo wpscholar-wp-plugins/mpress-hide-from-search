@@ -116,7 +116,7 @@ class Plugin {
 			'_hide_from_search_wp',
 			array(
 				'type'              => 'boolean',
-				'description'       => esc_html__( 'Hide from WordPress search', 'hide-from-search' ),
+				'description'       => esc_html__( 'Hide from WordPress search', 'mpress-hide-from-search' ),
 				'single'            => true,
 				'sanitize_callback' => function ( $value ) {
 					return filter_var( $value, FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE );
@@ -136,7 +136,7 @@ class Plugin {
 			'_hide_from_search_engines',
 			array(
 				'type'              => 'boolean',
-				'description'       => esc_html__( 'Hide from search engines', 'hide-from-search' ),
+				'description'       => esc_html__( 'Hide from search engines', 'mpress-hide-from-search' ),
 				'single'            => true,
 				'sanitize_callback' => function ( $value ) {
 					return filter_var( $value, FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE );

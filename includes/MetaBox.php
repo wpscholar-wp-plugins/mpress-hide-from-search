@@ -25,7 +25,7 @@ class MetaBox {
 		foreach ( $post_types as $post_type ) {
 			add_meta_box(
 				'hide-from-search',
-				esc_html__( 'Hide from Search', 'hide-from-search' ),
+				esc_html__( 'Hide from Search', 'mpress-hide-from-search' ),
 				array( __CLASS__, 'render' ),
 				$post_type,
 				'side',

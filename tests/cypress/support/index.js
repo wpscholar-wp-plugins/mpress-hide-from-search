@@ -13,17 +13,7 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 
-import 'cypress-axe';
 import './commands';
-
-Cypress.on('window:before:load', (win) => {
-	delete win.fetch
-});
-
-Cypress.Cookies.defaults({
-	preserve: /wp|wordpress/, // Cypress 5.0+
-	whitelist: /wp|wordpress/, // Cypress <5.0
-});
 
 before(() => {
 	cy.login(Cypress.env('wpUsername'), Cypress.env('wpPassword'));

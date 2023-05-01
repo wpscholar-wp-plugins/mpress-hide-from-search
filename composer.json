@@ -20,7 +20,11 @@
     },
     "config": {
         "optimize-autoloader": true,
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "cweagans/composer-patches": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     },
     "require": {
         "wp-forge/container": "^1.0",
@@ -28,6 +32,7 @@
         "wp-forge/wp-upgrade-handler": "^1.0"
     },
     "require-dev": {
+        "roave/security-advisories": "dev-latest",
         "wp-cli/wp-cli-bundle": "@stable",
         "wpscholar/phpcs-standards-wpscholar": "@stable"
     },
