@@ -6,6 +6,17 @@ context(
 
 		function loadPage() {
 			cy.visit('/wp-admin/post.php?post=1&action=edit');
+		}
+
+		function dismissModal() {
+			cy
+				.window()
+				.then((window) => {
+					const {wp} = window;
+					if (wp.data && wp.data.select('core/edit-post').isFeatureActive('welcomeGuide')) {
+						wp.data.dispatch('core/edit-post').toggleFeature('welcomeGuide');
+					}
+				});
 			cy
 				.document()
 				.then((document) => {
@@ -26,7 +37,7 @@ context(
 		})
 
 		it('Should be visible', () => {
-			loadPage();
+			dismissModal();
 			cy
 				.get('#hide-from-search')
 				.scrollIntoView()
@@ -80,6 +91,7 @@ context(
 			cy.get('.editor-post-publish-button').click();
 			cy.wait('@meta');
 			loadPage();
+			dismissModal();
 
 			// Checkboxes should be checked
 			cy.get('@wpCheckbox').should('be.checked');
@@ -93,6 +105,7 @@ context(
 			cy.get('.editor-post-publish-button').click();
 			cy.wait('@meta');
 			loadPage();
+			dismissModal();
 
 			// Checkboxes should be unchecked
 			cy.get('@wpCheckbox').should('not.be.checked');
