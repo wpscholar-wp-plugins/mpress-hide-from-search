@@ -1,13 +1,9 @@
 const {defineConfig} = require('cypress')
-const {phpVersion, core} = require('./.wp-env.json')
-const wpVersion = /[^/]*$/.exec(core)[0]
 
 module.exports = defineConfig({
 	env: {
 		wpUsername: 'admin',
 		wpPassword: 'password',
-		wpVersion,
-		phpVersion,
 	},
 	downloadsFolder: 'tests/cypress/downloads',
 	fixturesFolder: 'tests/cypress/fixtures',

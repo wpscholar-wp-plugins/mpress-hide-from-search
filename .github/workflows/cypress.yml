@@ -11,9 +11,9 @@ on:
       - '.gitignore'
       - '**.md'
   pull_request:
-    types: [opened, edited, synchronize, reopened, ready_for_review]
+    types: [ opened, edited, synchronize, reopened, ready_for_review ]
   pull_request_review:
-    types: [submitted, edited]
+    types: [ submitted, edited ]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.head_ref || github.sha }}
@@ -88,6 +88,10 @@ jobs:
 
       - name: Configure WordPress
         run: echo '{"plugins":["${{ steps.workflow.outputs.DIST }}/${{ steps.workflow.outputs.PACKAGE }}"]}' > .wp-env.json
+
+      - name: Configure Cypress
+        run: |
+          echo '{"wpVersion": "6.2","phpVersion": "8.1"}' > cypress.env.json
 
       - name: Install WordPress
         run: npx wp-env start --debug
