@@ -13,7 +13,11 @@ context(
 					if (wp.data && wp.data.select('core/edit-post').isFeatureActive('welcomeGuide')) {
 						wp.data.dispatch('core/edit-post').toggleFeature('welcomeGuide');
 					}
-					win.querySelector('.components-modal__screen-overlay').style.display = 'none';
+				});
+			cy
+				.document()
+				.then((doc) => {
+					doc.querySelector('.components-modal__screen-overlay').style.display = 'none';
 				});
 		})
 
