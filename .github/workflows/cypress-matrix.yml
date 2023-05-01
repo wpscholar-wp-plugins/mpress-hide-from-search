@@ -112,8 +112,3 @@ jobs:
         with:
           name: screenshots
           path: ./tests/cypress/screenshots
-
-      - name: Output debug.log file contents
-        if: ${{ always() }}
-        continue-on-error: true
-        run: npx wp-env run wordpress "cat /var/www/html/wp-content/debug.log"
