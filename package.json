@@ -6,7 +6,8 @@
     "test": "npx cypress run",
     "lint": "yamllint --ignore=node_modules/** **/*.yml",
     "i18n": "wpi18n addtextdomain && wpi18n makepot",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "postprepare": "npm run set-wp-version"
   },
   "repository": {
     "type": "git",

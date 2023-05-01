@@ -8,10 +8,12 @@ context(
 			cy.visit('/wp-admin/post.php?post=1&action=edit');
 			cy
 				.window()
-				.then(({wp}) => {
+				.then((win) => {
+					const {wp} = win;
 					if (wp.data && wp.data.select('core/edit-post').isFeatureActive('welcomeGuide')) {
 						wp.data.dispatch('core/edit-post').toggleFeature('welcomeGuide');
 					}
+					win.querySelector('.components-modal__screen-overlay').style.display = 'none';
 				});
 		})
 

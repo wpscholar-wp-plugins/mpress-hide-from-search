@@ -44,3 +44,17 @@ Cypress.Commands.add('login', (username, password) => {
 			}
 		});
 });
+
+Cypress.Commands.add('logout', () => {
+	cy
+		.getCookies()
+		.then(
+			cookies => {
+				cookies.forEach(
+					cookie => {
+						cy.clearCookie(cookie.name);
+					}
+				)
+			}
+		);
+});
