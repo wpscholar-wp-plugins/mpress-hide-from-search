@@ -12,8 +12,8 @@
  * Plugin URI:        https://wordpress.org/plugins/mpress-hide-from-search/
  * Description:       Hide individual WordPress pages from search engines and/or WordPress search results.
  * Version:           1.1.4
- * Requires PHP:      5.6
- * Requires at least: 5.0
+ * Requires PHP:      7.4
+ * Requires at least: 6.0
  * Author:            Micah Wood
  * Author URI:        https://wpscholar.com
  * Text Domain:       mpress-hide-from-search

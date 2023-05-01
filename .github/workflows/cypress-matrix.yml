@@ -1,18 +1,11 @@
-name: Cypress Tests
+name: Cypress Test Matrix
 
 on:
-  push:
-    branches:
-      - master
-    paths-ignore:
-      - '.github/**'
-      - '!.github/workflows/cypress.yml'
-      - '.gitignore'
-      - '**.md'
   pull_request:
-    types: [opened, edited, synchronize, reopened, ready_for_review]
-  pull_request_review:
-    types: [submitted, edited]
+    types: [ opened, edited, reopened, ready_for_review ]
+    branches:
+      - 'master'
+  workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.head_ref || github.sha }}
@@ -20,8 +13,22 @@ concurrency:
 
 jobs:
   test:
-    name: Run Cypress Tests
+    name: Run Cypress Test Matrix
     runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        phpVersion:
+          - '7.4'
+          - '8.0'
+          - '8.1'
+          - '8.2'
+        wpVersion:
+          - '6.0'
+          - '6.1'
+          - '6.2'
+
     steps:
 
       - name: Checkout
@@ -34,23 +41,23 @@ jobs:
           coverage: none
           tools: composer, cs2pr
 
-      - name: Setup Workflow Context
+      - name: Setup workflow context
         id: workflow
         working-directory: ${{ runner.temp }}
         env:
           REPO: ${{ github.repository }}
         run: |
           mkdir dist
-          echo ::set-output name=DIST::${PWD}/dist
-          echo ::set-output name=PACKAGE::${REPO##*/}
+          echo "DIST=${PWD}/dist" >> $GITHUB_OUTPUT
+          echo "PACKAGE=${REPO##*/}" >> $GITHUB_OUTPUT
 
       - name: Use Node.js 18.x
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: 18.x
           cache: 'npm'
 
-      - name: Get Composer Cache Directory
+      - name: Get Composer cache directory
         id: composer-cache
         run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
 
@@ -86,7 +93,12 @@ jobs:
         run: find .
 
       - name: Configure WordPress
-        run: echo '{"plugins":["${{ steps.workflow.outputs.DIST }}/${{ steps.workflow.outputs.PACKAGE }}"]}' > .wp-env.json
+        run: |
+          echo '{"core": "WordPress/WordPress#tags/${{ matrix.wpVersion }}","phpVersion": "${{ matrix.phpVersion }}","plugins": [ "${{ steps.workflow.outputs.DIST }}/${{ steps.workflow.outputs.PACKAGE }}" ] }' > .wp-env.override.json
+
+      - name: Configure Cypress
+        run: |
+          echo '{"wpVersion": "${{ matrix.wpVersion }}","phpVersion": "${{ matrix.phpVersion }}"}' > cypress.env.json
 
       - name: Install WordPress
         run: npx wp-env start --debug
@@ -100,3 +112,8 @@ jobs:
         with:
           name: screenshots
           path: ./tests/cypress/screenshots
+
+      - name: Output debug.log file contents
+        if: ${{ always() }}
+        continue-on-error: true
+        run: npx wp-env run wordpress "cat /var/www/html/wp-content/debug.log"

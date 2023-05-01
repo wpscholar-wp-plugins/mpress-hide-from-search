@@ -2,8 +2,8 @@
 Contributors: wpscholar
 Donate link: https://www.paypal.me/wpscholar
 Tags: search, search engines, WordPress search, hide from search, exclude from search, hide post, hidden posts
-Requires at least: 5.0
-Requires PHP: 5.6
+Requires at least: 6.0
+Requires PHP: 7.4
 Tested up to: 6.2
 Stable tag: 1.1.4
 License: GPLv3
