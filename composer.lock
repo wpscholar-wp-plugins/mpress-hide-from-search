@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d79875cf178aee3f3358c66e105a5c7b",
+    "content-hash": "bc26790b9da44552f5d6dc9ef4d73f63",
     "packages": [
         {
             "name": "psr/container",
@@ -56,16 +56,16 @@
         },
         {
             "name": "wp-forge/container",
-            "version": "1.1",
+            "version": "2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-forge/container.git",
-                "reference": "1c48853f79b6319e4e7f14b9f3e28c2142ec89b5"
+                "reference": "a4f48079eff2d7e3f31acb09d199d1c1e39de74a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-forge/container/zipball/1c48853f79b6319e4e7f14b9f3e28c2142ec89b5",
-                "reference": "1c48853f79b6319e4e7f14b9f3e28c2142ec89b5",
+                "url": "https://api.github.com/repos/wp-forge/container/zipball/a4f48079eff2d7e3f31acb09d199d1c1e39de74a",
+                "reference": "a4f48079eff2d7e3f31acb09d199d1c1e39de74a",
                 "shasum": ""
             },
             "require": {
@@ -88,12 +88,12 @@
                     "email": "micah@wpscholar.com"
                 }
             ],
-            "description": "A lightweight, PHP 5.4+ compatible, PSR-11 dependency injection container.",
+            "description": "A lightweight, PHP 7.0+ compatible, PSR-11 dependency injection container.",
             "support": {
                 "issues": "https://github.com/wp-forge/container/issues",
-                "source": "https://github.com/wp-forge/container/tree/1.1"
+                "source": "https://github.com/wp-forge/container/tree/2.0"
             },
-            "time": "2022-07-14T11:26:51+00:00"
+            "time": "2022-08-10T20:22:58+00:00"
         },
         {
             "name": "wp-forge/wp-plugin-check",
