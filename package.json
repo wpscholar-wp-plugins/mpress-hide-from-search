@@ -22,7 +22,7 @@
   "homepage": "https://github.com/wpscholar-wp-plugins/mpress-hide-from-search#readme",
   "devDependencies": {
     "@testing-library/cypress": "^9.0.0",
-    "@wordpress/env": "^6.0.0",
+    "@wordpress/env": "^8.1.0",
     "cypress": "^12.11.0",
     "cypress-axe": "^1.4.0",
     "husky": "^8.0.0",
