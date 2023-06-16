@@ -5472,21 +5472,20 @@
         },
         {
             "name": "wpscholar/phpcs-standards-wpscholar",
-            "version": "1.0.4",
+            "version": "1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wpscholar/phpcs-standards-wpscholar.git",
-                "reference": "fbbd2ff7ef5e39ca73df01f5cc02b747efc739ad"
+                "reference": "f25cbbf74cf3c0324efb2dd65339274d4f2d7de5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wpscholar/phpcs-standards-wpscholar/zipball/fbbd2ff7ef5e39ca73df01f5cc02b747efc739ad",
-                "reference": "fbbd2ff7ef5e39ca73df01f5cc02b747efc739ad",
+                "url": "https://api.github.com/repos/wpscholar/phpcs-standards-wpscholar/zipball/f25cbbf74cf3c0324efb2dd65339274d4f2d7de5",
+                "reference": "f25cbbf74cf3c0324efb2dd65339274d4f2d7de5",
                 "shasum": ""
             },
             "require": {
                 "dealerdirect/phpcodesniffer-composer-installer": "@stable",
-                "phpcompatibility/php-compatibility": "@stable",
                 "phpcompatibility/phpcompatibility-wp": "@stable",
                 "squizlabs/php_codesniffer": "@stable",
                 "wp-coding-standards/wpcs": "@stable"
@@ -5505,9 +5504,9 @@
             "description": "PHP Code Sniffer Standards for WP Scholar",
             "support": {
                 "issues": "https://github.com/wpscholar/phpcs-standards-wpscholar/issues",
-                "source": "https://github.com/wpscholar/phpcs-standards-wpscholar/tree/1.0.4"
+                "source": "https://github.com/wpscholar/phpcs-standards-wpscholar/tree/1.0.6"
             },
-            "time": "2019-04-30T20:59:44+00:00"
+            "time": "2023-06-16T13:33:40+00:00"
         }
     ],
     "aliases": [],
