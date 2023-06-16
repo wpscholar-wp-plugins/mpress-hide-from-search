@@ -3,8 +3,7 @@ name: Package Plugin
 on:
   release:
     types:
-      - created
-      - updated
+      - published
 
 jobs:
   deploy:
@@ -18,7 +17,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '7.4'
+          php-version: '8.0'
           coverage: none
           tools: composer, cs2pr
 
