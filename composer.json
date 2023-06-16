@@ -27,7 +27,7 @@
         }
     },
     "require": {
-        "wp-forge/container": "^1.0",
+        "wp-forge/container": "^3.0",
         "wp-forge/wp-plugin-check": "^1.0",
         "wp-forge/wp-upgrade-handler": "^1.0"
     },
