@@ -19,12 +19,13 @@
         }
     },
     "config": {
-        "optimize-autoloader": true,
-        "sort-packages": true,
         "allow-plugins": {
             "cweagans/composer-patches": true,
             "dealerdirect/phpcodesniffer-composer-installer": true
-        }
+        },
+        "optimize-autoloader": true,
+        "platform-check": false,
+        "sort-packages": true
     },
     "require": {
         "wp-forge/container": "^3.0",
