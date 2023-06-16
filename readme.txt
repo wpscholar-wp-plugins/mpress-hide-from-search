@@ -5,7 +5,7 @@ Tags: search, search engines, WordPress search, hide from search, exclude from s
 Requires at least: 6.0
 Requires PHP: 7.4
 Tested up to: 6.2
-Stable tag: 1.1.4
+Stable tag: 1.1.5
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -66,6 +66,9 @@ the bottom right of the screen and save your changes.  Viola! The post has been 
 
 == Changelog ==
 
+= 1.1.5 =
+* Fix issue with wp-forge/container package not being compatible with PHP versions older than 8.0
+
 = 1.1.4 =
 * Minor maintenance release
 
@@ -122,6 +125,9 @@ the bottom right of the screen and save your changes.  Viola! The post has been 
 * Initial commit
 
 == Upgrade Notice ==
+
+= 1.1.5 =
+* Fix issue with wp-forge/container package not being compatible with PHP versions older than 8.0
 
 = 1.1.4 =
 * Minor maintenance release

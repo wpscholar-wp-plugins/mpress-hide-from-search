@@ -22,7 +22,7 @@
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  */
 
-define( 'HIDE_FROM_SEARCH_VERSION', '1.1.4' );
+define( 'HIDE_FROM_SEARCH_VERSION', '1.1.5' );
 define( 'HIDE_FROM_SEARCH_FILE', __FILE__ );
 
 require __DIR__ . '/vendor/autoload.php';
