@@ -148,7 +148,6 @@ class Plugin {
 				'should_render'     => '__return_true',
 			)
 		);
-
 	}
 
 	/**
@@ -181,7 +180,6 @@ class Plugin {
 				}
 			)
 		);
-
 	}
 
 	/**
@@ -192,7 +190,6 @@ class Plugin {
 		add_action( 'wp_head', array( __CLASS__, 'hideFromSearchEngines' ), 5 );
 		add_filter( 'posts_where', array( __CLASS__, 'hideFromWordPressSearch' ) );
 	}
-
 }
 
 Plugin::initialize();
