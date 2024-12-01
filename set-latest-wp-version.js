@@ -1,6 +1,6 @@
-const fs = require('fs')
-const fetch = require('node-fetch')
-const wpEnv = require('./.wp-env.json')
+import fs from 'fs';
+import fetch from 'node-fetch'
+import wpEnv from './.wp-env.json' assert { type: 'json' };
 
 fetch('https://api.wordpress.org/core/stable-check/1.0/')
 	.then(res => res.json())

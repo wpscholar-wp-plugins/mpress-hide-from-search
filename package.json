@@ -2,11 +2,10 @@
   "name": "mpress-hide-from-search",
   "description": "Hide individual WordPress pages from search engines and/or WordPress search results.",
   "private": true,
+  "type": "module",
   "scripts": {
     "test": "npx cypress run",
     "lint": "yamllint --ignore=node_modules/** **/*.yml",
-    "i18n": "wpi18n addtextdomain && wpi18n makepot",
-    "prepare": "husky install",
     "postprepare": "npm run set-wp-version",
     "set-wp-version": "node ./set-latest-wp-version.js"
   },
@@ -25,27 +24,11 @@
     "@wordpress/env": "^10.13.0",
     "cypress": "^13.16.0",
     "cypress-axe": "^1.4.0",
-    "husky": "^9.1.7",
-    "lint-staged": "^15.2.10",
     "node-fetch": "^3.3.2",
-    "node-wp-i18n": "^1.2.7",
     "yaml-lint": "^1.7.0"
   },
   "engines": {
-    "node": ">=18",
-    "npm": ">=9"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "**/*.yml": [
-      "yamllint --ignore=node_modules/**"
-    ],
-    "**/*.php": [
-      "vendor/bin/phpcs -s"
-    ]
+    "node": ">=20",
+    "npm": ">=10"
   }
 }
