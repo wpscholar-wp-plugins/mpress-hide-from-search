@@ -1,15 +1,15 @@
 === Hide from Search ===
 Contributors: wpscholar
 Donate link: https://www.paypal.me/wpscholar
-Tags: search, search engines, WordPress search, hide from search, exclude from search, hide post, hidden posts
+Tags: search engines, WordPress search, hide from search, exclude from search, hidden posts
 Requires at least: 6.0
 Requires PHP: 7.4
 Tested up to: 6.7
 Stable tag: 1.1.7
-License: GPLv3
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+License: GPLv2
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Hide individual WordPress pages from search engines and/or WordPress search, such as confirmation and download pages that should only be accessible via a squeeze page.
+Hide individual WordPress pages from search engines and/or WordPress searches, such as confirmation and download pages.
 
 == Description ==
 
