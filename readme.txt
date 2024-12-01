@@ -66,6 +66,9 @@ the bottom right of the screen and save your changes.  Viola! The post has been 
 
 == Changelog ==
 
+= 1.1.7 =
+* General maintenance
+
 = 1.1.6 =
 * Version bump to fix automated release process.
 
