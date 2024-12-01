@@ -1,4 +1,4 @@
-const {defineConfig} = require('cypress')
+const { defineConfig } = require('cypress');
 
 module.exports = defineConfig({
 	env: {
@@ -21,6 +21,7 @@ module.exports = defineConfig({
 			return config;
 		},
 		baseUrl: 'http://localhost:8888',
+		experimentalRunAllSpecs: true,
 		specPattern: 'tests/cypress/integration/**/*.cy.{js,jsx,ts,tsx}',
 		supportFile: 'tests/cypress/support/index.js',
 		testIsolation: false

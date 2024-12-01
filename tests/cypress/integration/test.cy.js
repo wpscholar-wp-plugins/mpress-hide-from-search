@@ -27,7 +27,7 @@ context(
 				});
 		}
 
-		before(() => {
+		beforeEach(() => {
 			loadPage();
 		})
 
