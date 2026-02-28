@@ -98,7 +98,7 @@ class Plugin {
 	 * Load plugin text domain.
 	 */
 	public static function loadTextDomain() {
-		load_plugin_textdomain( 'hide-from-search', false, dirname( HIDE_FROM_SEARCH_FILE ) . '/languages' );
+		load_plugin_textdomain( 'mpress-hide-from-search', false, dirname( HIDE_FROM_SEARCH_FILE ) . '/languages' );
 	}
 
 	/**
