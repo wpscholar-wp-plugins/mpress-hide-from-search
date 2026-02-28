@@ -6,6 +6,16 @@ context(
 
 		function loadPage() {
 			cy.visit('/wp-admin/post.php?post=1&action=edit');
+			// WP 6.8 introduced a resize handle on the meta boxes area with a constrained
+			// default height (~300px), which can hide meta box content from view. Wait for
+			// the meta boxes to load, then reset the height to auto.
+			cy.get('#hide-from-search', { timeout: 15000 });
+			cy.document().then((doc) => {
+				const area = doc.querySelector('.edit-post-meta-boxes-area');
+				if (area) {
+					area.style.height = 'auto';
+				}
+			});
 		}
 
 		function dismissModal() {

@@ -112,5 +112,5 @@ jobs:
         if: ${{ failure() }}
         uses: actions/upload-artifact@v4
         with:
-          name: screenshots
+          name: screenshots-php${{ matrix.phpVersion }}-wp${{ matrix.wpVersion }}
           path: ./tests/cypress/screenshots
