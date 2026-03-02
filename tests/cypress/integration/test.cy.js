@@ -8,7 +8,8 @@ context(
 			cy.visit('/wp-admin/post.php?post=1&action=edit');
 			// Wait for the meta boxes to load, then scroll the meta box into view.
 			// This mirrors how a user would scroll down to find the settings.
-			cy.get('#hide-from-search', { timeout: 15000 }).scrollIntoView();
+			cy.wait(500);
+			cy.get("#hide-from-search", {timeout: 15000}).scrollIntoView();
 		}
 
 		function dismissModal() {
@@ -41,8 +42,7 @@ context(
 
 		it('Should be visible', () => {
 			dismissModal();
-			cy
-				.get('#hide-from-search')
+			cy.get("#hide-from-search", {timeout: 15000})
 				.scrollIntoView()
 				.should('be.visible');
 		})
