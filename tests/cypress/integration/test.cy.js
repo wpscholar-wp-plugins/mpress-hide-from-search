@@ -32,8 +32,8 @@ context(
 		}
 
 		beforeEach(() => {
-			loadPage();
-		})
+      loadPage();
+    });
 
 		it('Is Accessible', () => {
 			cy.injectAxe();
