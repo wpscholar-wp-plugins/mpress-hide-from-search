@@ -6,21 +6,9 @@ context(
 
 		function loadPage() {
 			cy.visit('/wp-admin/post.php?post=1&action=edit');
-			// Wait for the meta boxes to load via the AJAX request.
-			cy.get('#hide-from-search', { timeout: 15000 });
-			// WP 6.8+ introduced a ResizableMetaBoxesArea with a fixed default height that
-			// clips meta box content. React manages this via inline styles (e.g. style="height:300px"),
-			// so element.style.height = 'auto' gets overridden on the next render.
-			// Injecting a <style> tag with !important wins the CSS cascade against any
-			// non-!important inline style React sets, and persists across re-renders.
-			cy.document().then((doc) => {
-				if (!doc.getElementById('cypress-meta-box-fix')) {
-					const style = doc.createElement('style');
-					style.id = 'cypress-meta-box-fix';
-					style.textContent = '.edit-post-meta-boxes-area { height: auto !important; max-height: none !important; overflow: visible !important; }';
-					doc.head.appendChild(style);
-				}
-			});
+			// Wait for the meta boxes to load, then scroll the meta box into view.
+			// This mirrors how a user would scroll down to find the settings.
+			cy.get('#hide-from-search', { timeout: 15000 }).scrollIntoView();
 		}
 
 		function dismissModal() {
