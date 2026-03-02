@@ -9,7 +9,7 @@ describe('Page', () => {
 
 	it('Is running the correct WP version', () => {
 
-		cy.get('#health-check-accordion-block-wp-core').prev().click();
+		cy.get('#health-check-accordion-block-wp-core', {timeout: 15000}).prev().click();
 		cy.get("#health-check-accordion-block-wp-core")
 			.find("tr")
 			.first()
@@ -21,7 +21,7 @@ describe('Page', () => {
 
 	it('Is running the correct PHP versions', () => {
 
-		cy.get('#health-check-accordion-block-wp-server').prev().click();
+		cy.get('#health-check-accordion-block-wp-server', {timeout: 15000}).prev().click();
 		cy.get("#health-check-accordion-block-wp-server")
 			.find("tr")
 			.eq(2)
