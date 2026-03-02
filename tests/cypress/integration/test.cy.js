@@ -6,14 +6,19 @@ context(
 
 		function loadPage() {
 			cy.visit('/wp-admin/post.php?post=1&action=edit');
-			// WP 6.8 introduced a resize handle on the meta boxes area with a constrained
-			// default height (~300px), which can hide meta box content from view. Wait for
-			// the meta boxes to load, then reset the height to auto.
+			// Wait for the meta boxes to load via the AJAX request.
 			cy.get('#hide-from-search', { timeout: 15000 });
+			// WP 6.8+ introduced a ResizableMetaBoxesArea with a fixed default height that
+			// clips meta box content. React manages this via inline styles (e.g. style="height:300px"),
+			// so element.style.height = 'auto' gets overridden on the next render.
+			// Injecting a <style> tag with !important wins the CSS cascade against any
+			// non-!important inline style React sets, and persists across re-renders.
 			cy.document().then((doc) => {
-				const area = doc.querySelector('.edit-post-meta-boxes-area');
-				if (area) {
-					area.style.height = 'auto';
+				if (!doc.getElementById('cypress-meta-box-fix')) {
+					const style = doc.createElement('style');
+					style.id = 'cypress-meta-box-fix';
+					style.textContent = '.edit-post-meta-boxes-area { height: auto !important; max-height: none !important; overflow: visible !important; }';
+					doc.head.appendChild(style);
 				}
 			});
 		}
