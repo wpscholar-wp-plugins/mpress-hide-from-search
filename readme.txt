@@ -4,8 +4,8 @@ Donate link: https://www.paypal.me/wpscholar
 Tags: search engines, WordPress search, hide from search, exclude from search, hidden posts
 Requires at least: 6.0
 Requires PHP: 7.4
-Tested up to: 6.7
-Stable tag: 1.1.7
+Tested up to: 6.9
+Stable tag: 1.1.8
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -65,6 +65,9 @@ the bottom right of the screen and save your changes.  Viola! The post has been 
 1. Using the plugin is simple, just check the box to hide a page or post.
 
 == Changelog ==
+
+= 1.1.8 =
+* General maintenance
 
 = 1.1.7 =
 * General maintenance

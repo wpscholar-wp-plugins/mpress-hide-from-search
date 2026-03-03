@@ -27,7 +27,7 @@
 import 'cypress-axe';
 import '@testing-library/cypress/add-commands';
 
-Cypress.Commands.add('login', (username, password) => {
+Cypress.Commands.add('login', (username = Cypress.env('wpUsername'), password = Cypress.env('wpPassword')) => {
 	cy
 		.getCookies()
 		.then(cookies => {

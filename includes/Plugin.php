@@ -24,7 +24,6 @@ class Plugin {
 	 */
 	public static function initialize() {
 		self::setUpContainer();
-		self::registerFields();
 		self::setUpHooks();
 
 		if ( is_admin() ) {
@@ -98,7 +97,7 @@ class Plugin {
 	 * Load plugin text domain.
 	 */
 	public static function loadTextDomain() {
-		load_plugin_textdomain( 'hide-from-search', false, dirname( HIDE_FROM_SEARCH_FILE ) . '/languages' );
+		load_plugin_textdomain( 'mpress-hide-from-search', false, dirname( HIDE_FROM_SEARCH_FILE ) . '/languages' );
 	}
 
 	/**
@@ -186,7 +185,8 @@ class Plugin {
 	 * Set up hooks.
 	 */
 	public static function setUpHooks() {
-		add_action( 'plugins_loaded', array( __CLASS__, 'loadTextDomain' ) );
+		add_action( 'init', array( __CLASS__, 'loadTextDomain' ) );
+		add_action( 'init', array( __CLASS__, 'registerFields' ) );
 		add_action( 'wp_head', array( __CLASS__, 'hideFromSearchEngines' ), 5 );
 		add_filter( 'posts_where', array( __CLASS__, 'hideFromWordPressSearch' ) );
 	}
