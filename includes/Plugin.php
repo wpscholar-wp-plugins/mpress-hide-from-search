@@ -67,12 +67,37 @@ class Plugin {
 	 * Hide page/post from search engines.
 	 */
 	public static function hideFromSearchEngines() {
-		if ( is_admin() || ! get_option( 'blog_public' ) ) {
-			return;
-		}
-		if ( (bool) get_post_meta( get_the_ID(), '_hide_from_search_engines', true ) ) {
+		if ( self::shouldHideFromSearchEngines() ) {
 			echo '<meta name="robots" content="noindex,nofollow"/>';
 		}
+	}
+
+	/**
+	 * Filter robots directives to hide page/post from search engines.
+	 *
+	 * @param array $robots Associative array of robots directives.
+	 *
+	 * @return array
+	 */
+	public static function filterRobots( array $robots ) {
+		if ( self::shouldHideFromSearchEngines() ) {
+			$robots['noindex']  = true;
+			$robots['nofollow'] = true;
+		}
+		return $robots;
+	}
+
+	/**
+	 * Check if the current post/page should be hidden from search engines.
+	 *
+	 * @return bool
+	 */
+	protected static function shouldHideFromSearchEngines() {
+		$post_id = get_the_ID();
+		return ! is_admin()
+			&& get_option( 'blog_public' )
+			&& $post_id
+			&& (bool) get_post_meta( $post_id, '_hide_from_search_engines', true );
 	}
 
 	/**
@@ -187,7 +212,11 @@ class Plugin {
 	public static function setUpHooks() {
 		add_action( 'init', array( __CLASS__, 'loadTextDomain' ) );
 		add_action( 'init', array( __CLASS__, 'registerFields' ) );
-		add_action( 'wp_head', array( __CLASS__, 'hideFromSearchEngines' ), 5 );
+		if ( function_exists( 'wp_robots' ) ) {
+			add_filter( 'wp_robots', array( __CLASS__, 'filterRobots' ) );
+		} else {
+			add_action( 'wp_head', array( __CLASS__, 'hideFromSearchEngines' ), 5 );
+		}
 		add_filter( 'posts_where', array( __CLASS__, 'hideFromWordPressSearch' ) );
 	}
 }
