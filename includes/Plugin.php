@@ -76,6 +76,31 @@ class Plugin {
 	}
 
 	/**
+	 * Filter Yoast SEO robots output to add noindex when needed.
+	 *
+	 * @param string $robots The robots string from Yoast SEO.
+	 *
+	 * @return string
+	 */
+	public static function filterYoastRobots( $robots ) {
+		if ( is_admin() || ! get_option( 'blog_public' ) ) {
+			return $robots;
+		}
+		$post_id = get_the_ID();
+		if ( ! $post_id ) {
+			return $robots;
+		}
+		if ( (bool) get_post_meta( $post_id, '_hide_from_search_engines', true ) ) {
+			$directives = array_map( 'trim', explode( ',', (string) $robots ) );
+			if ( in_array( 'nofollow', $directives, true ) ) {
+				return 'noindex,nofollow';
+			}
+			return 'noindex,follow';
+		}
+		return $robots;
+	}
+
+	/**
 	 * Filter the 'where' clause to exclude any hidden posts from search
 	 *
 	 * @param string $where The SQL `where` clause.
@@ -189,6 +214,7 @@ class Plugin {
 		add_action( 'init', array( __CLASS__, 'registerFields' ) );
 		add_action( 'wp_head', array( __CLASS__, 'hideFromSearchEngines' ), 5 );
 		add_filter( 'posts_where', array( __CLASS__, 'hideFromWordPressSearch' ) );
+		add_filter( 'wpseo_robots', array( __CLASS__, 'filterYoastRobots' ) );
 	}
 }
 
