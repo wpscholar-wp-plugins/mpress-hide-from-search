@@ -22,7 +22,7 @@
   "devDependencies": {
     "@testing-library/cypress": "^10.0.2",
     "@wordpress/env": "^10.13.0",
-    "cypress": "^13.16.0",
+    "cypress": "^15.14.0",
     "cypress-axe": "^1.4.0",
     "node-fetch": "^3.3.2",
     "yaml-lint": "^1.7.0"
